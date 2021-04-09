@@ -1,0 +1,37 @@
+<div class="auth">
+  <form class="auth__form" (ngSubmit)="authService.fetchLogin()">
+    <h1 class="auth__form-title">Sign In</h1>
+
+    <div class="auth__form-item">
+      <label for="login">Email</label>
+      <input
+        name="login"
+        id="login"
+        type="text"
+        #email="ngModel"
+        required
+        pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"
+        [(ngModel)]="authService.email"
+      >
+      <span class="auth__wrong" [hidden]="email.valid || email.untouched">Wrong field! The field must be filled in and it must be correct email.</span>
+    </div>
+
+    <div class="auth__form-item">
+      <label for="password">Password</label>
+      <input
+        name="password"
+        id="password"
+        type="password"
+        #password="ngModel"
+        required
+        minlength="8"
+        [(ngModel)]="authService.password"
+      >
+      <span class="auth__wrong" [hidden]="password.valid || password.untouched">Wrong field! The field must be filled in and have between 8 and 30 characters.</span>
+    </div>
+
+    <div class="form__footer">
+      <button type="submit" class="form__btn btn">Login</button>
+    </div>
+  </form>
+</div>

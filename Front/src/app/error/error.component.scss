@@ -1,0 +1,17 @@
+@import '../../assets/scss/vars';
+
+.error {
+  margin-top: $nav-height;
+  text-align: center;
+
+  font-size: 5rem;
+  color: #F44336;
+}
+
+span {
+  margin-top: 1rem;
+  display: block;
+
+  font-size: 3rem;
+  text-align: center;
+}

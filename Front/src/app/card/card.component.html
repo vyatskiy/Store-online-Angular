@@ -1,0 +1,32 @@
+<div
+    class="card-inline"
+    [routerLink]="['/item/' + card.id]"
+  >
+    <div class="card-inline__img">
+      <img [src]="rootService.root + card.src + '.png'" [alt]="card.src">
+    </div>
+    <div class="card-inline__content">
+      <div class="cart-inline__header">
+        <span class="card__rating">{{card.rating}}</span>
+        <strong class="card-inline__price">{{card.instrument_name}}&#27AE60;</strong>
+        <strong class="card-inline__price">{{card.price.toLocaleString('ru-RU')}}&#8381;</strong>
+      </div>
+      <div>
+        <p class="cart-inline__description">{{card.description}}</p>
+      </div>
+      <div class="card-inline__footer">
+        <button
+          class="card-inline__btn btn"
+          (click)="cartService.addToCart(card, $event)"
+          *ngIf="!cartService.checkInCart(card.id); else elseButton"
+        >Add to cart</button>
+        <ng-template #elseButton>
+          <button
+            class="card-inline__btn card__btn-disabled btn"
+            [routerLink]="['/item/' + card.id]"
+            disabled
+          >In cart</button>
+        </ng-template>
+      </div>
+    </div>
+  </div>

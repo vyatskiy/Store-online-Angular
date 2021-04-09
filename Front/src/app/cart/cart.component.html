@@ -1,0 +1,39 @@
+<div class="cart">
+  <h1 class="cart__title">My cart</h1>
+
+  <div
+    class="cart__empty"
+    *ngIf="items.length === 0"
+  >
+    <span>Your cart is empty!</span>
+  </div>
+
+  <div
+    class="cart__product"
+    *ngFor="let item of items; let i = index"
+  >
+    <div class="cart__img">
+      <img [src]="rootService.root + item.src + '.png'" [alt]="item.src">
+    </div>
+
+    <div class="cart__info">
+      <p class="cart__info-title">{{item.instrument_name}}</p>
+      <strong class="cart__price">{{(item.price * item.count).toLocaleString('ru-RU')}}&#8381;</strong>
+
+      <div class="cart__action">
+        <small class="cart__count">Кол-во: {{item.count}}</small>
+        <button class="cart__btn btn" (click)="decrease(item.id)">-</button>
+        <button class="cart__btn btn" (click)="increase(item.id)">+</button>
+      </div>
+    </div>
+
+    <button
+      class="cart__delete"
+      (click)="deleteItem(item.id)"
+    ></button>
+  </div>
+
+  <div class="cart__footer">
+    <strong>Total price: {{totalPrice().toLocaleString('ru-RU')}}&#8381;</strong>
+  </div>
+</div>

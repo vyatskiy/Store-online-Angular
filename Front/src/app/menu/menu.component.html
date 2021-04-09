@@ -1,0 +1,25 @@
+<ul class="menu">
+  <li class="menu__item">
+    <a
+      [routerLink]="['/product/mobile']"
+      [ngClass]="{active: product === 'mobile'}"
+      class="menu__item-link menu__item-mobile"
+    >Mobile</a>
+  </li>
+
+  <li class="menu__item">
+    <a
+      [routerLink]="['/product/laptop']"
+      [ngClass]="{active: product === 'laptop'}"
+      class="menu__item-link menu__item-laptop"
+    >Laptops</a>
+  </li>
+
+  <li class="menu__item">
+    <a
+      [routerLink]="['/product/printer']"
+      [ngClass]="{active: product === 'printer'}"
+      class="menu__item-link menu__item-printer"
+    >Printers</a>
+  </li>
+</ul>

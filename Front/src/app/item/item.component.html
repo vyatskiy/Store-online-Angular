@@ -1,0 +1,30 @@
+<div
+  class="item"
+  *ngIf="cardService.card.src !== undefined; else elseBlock"
+>
+  <div class="item__img">
+    <img [src]="rootService.root + cardService.card.src + '.png'" [alt]="cardService.card.src">
+  </div>
+  <div class="item__content">
+    <h2 class="item__title">{{cardService.card.instrument_name}}</h2>
+    <p class="item__description">{{cardService.card.description}}</p>
+    <strong class="item__price">{{cardService.card.price.toLocaleString('ru-RU')}}&#8381;</strong>
+
+    <button
+      class="item__btn btn"
+      (click)="cartService.addToCart(cardService.card, $event)"
+      *ngIf="!cartService.checkInCart(cardService.card.id); else elseButton"
+    >Buy</button>
+    <ng-template #elseButton>
+      <button
+        class="item__btn item__btn-disabled btn"
+        [routerLink]="['/item/' + cardService.card.id]"
+        disabled
+      >In cart</button>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <span>Loading...</span>
+</ng-template>

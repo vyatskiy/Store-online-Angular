@@ -1,0 +1,160 @@
+@import '../../assets/scss/vars';
+
+.cart {
+  padding-top: $nav-height;
+  text-align: center;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart__title {
+  margin-bottom: 2rem;
+  font-size: 5rem;
+}
+
+.cart__empty {
+  font-size: 2rem;
+}
+
+.cart__product {
+  margin: 0 auto 4.5rem;
+  padding: 2rem 1rem;
+
+  width: 80%;
+
+  position: relative;
+  display: flex;
+
+  box-shadow: 0px 2px 4px rgb(27 78 163 / 20%), 0px 4px 8px rgb(41 121 255 / 20%);
+  border-radius: 2rem;
+
+  transition: box-shadow .2s linear;
+
+  &:hover {
+    box-shadow: 5px 5px 0px 0px #00f735, 10px 10px 0px 0px #0dac08, 15px 15px 0px 0px #3ca513, 20px 20px 0px 0px #1e8823, 25px 25px 0px 0px #1b812c, 5px 5px 15px 5px #2d6d40;
+  }
+}
+
+.cart__delete {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+
+  width: 20px;
+  height: 20px;
+
+  border: none;
+  background: url('../../assets/delete.svg') no-repeat center;
+  background-size: 20px;
+
+  cursor: pointer;
+  transition: transform .2s linear;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.cart__img {
+  margin: auto 0;
+
+  position: relative;
+
+  width: 200px;
+  height: 300px;
+
+  overflow: hidden;
+
+  img {
+    position: absolute;
+
+    width: 80%;
+    height: 100%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    object-fit: contain;
+  }
+}
+
+.cart__info {
+  margin-top: 3rem;
+  display: flex;
+
+  width: calc(100% - 150px);
+  height: max-content;
+}
+
+.cart__info-title {
+  margin-left: 5rem;
+  width: 50%;
+
+  font-size: 2rem;
+}
+
+.cart__action {
+  height: 100px;
+}
+
+.cart__price,
+.cart__count {
+  width: 25%;
+}
+
+.cart__price {
+  display: inline-block;
+
+  font-size: 2rem;
+  line-height: 150%;
+  font-weight: 700;
+}
+
+.cart__count {
+  margin-bottom: 1rem;
+
+  display: block;
+  width: 100%;
+}
+
+.cart__btn {
+  padding: 0;
+
+  width: 40px;
+  height: 40px;
+
+  & + & {
+    margin-left: .7rem;
+  }
+}
+
+.cart__footer {
+  margin-top: auto;
+  padding-bottom: 2rem;
+
+  strong {
+    margin-bottom: 1.5rem;
+
+    font-size: 3rem;
+    display: block;
+  }
+
+  button {
+    padding: 3rem 7rem;
+    transition: background-color .2s linear;
+
+    &:hover {
+      border: 1px solid transparent;
+      color: #fff;
+      background-color: #27AE60;
+    }
+  }
+}

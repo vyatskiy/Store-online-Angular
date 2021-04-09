@@ -1,0 +1,62 @@
+<nav class="nav">
+  <div class="nav__input">
+    <span></span>
+    <input
+      type="search"
+      placeholder="Search"
+      [(ngModel)]="search"
+      (ngModelChange)="searchItem()"
+    />
+
+    <div
+      class="nav__input-search"
+      *ngIf="filteredItems.length">
+      <ul>
+        <li *ngFor="let item of filteredItems">
+          <a [routerLink]="['/item/' + item.id]">{{item.instrument_name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="nav__user">
+    <button
+      class="btn"
+      [routerLink]="['/login']"
+      *ngIf="authService.isLogIn()"
+    >Sign In</button>
+    <button
+      class="btn"
+      [routerLink]="['/register']"
+      *ngIf="authService.isLogIn()"
+    >Sign Up</button>
+    <button
+      class="btn"
+      [routerLink]="['/cart']"
+    >
+      <span class="btn__text">My cart</span>
+      <span
+        class="btn__mark"
+        *ngIf="countItems() > 0"
+      >{{countItems()}}</span>
+    </button>
+    <button
+      class="nav__user-btn"
+      (click)="userHandler()"
+      *ngIf="!authService.isLogIn()"
+    >
+      <img src="./assets/user.svg" alt="user-photo">
+    </button>
+
+    <div
+      class="nav__user-info"
+      *ngIf="isClickUser"
+    >
+      <span>{{authService.getCustomer()}}</span>
+      <button
+        class="btn"
+        (click)="authService.logout(); userHandler()"
+      >Logout</button>
+    </div>
+  </div>
+</nav>

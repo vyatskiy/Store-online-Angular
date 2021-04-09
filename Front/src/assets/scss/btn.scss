@@ -1,0 +1,57 @@
+.btn {
+  position: relative;
+
+  padding: .8rem 1.2rem;
+
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Quicksand', sans-serif;
+
+  color: #136638;
+
+  background: none;
+
+  box-shadow: 0px 2px 4px rgba(112, 243, 4, 0.2), 0px 4px 8px rgba(41, 121, 255, 0.2);
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  transition: border .2s linear, border-radius .2s linear;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid #9DC2FF;
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: none;
+
+    border: 1px solid #9DC2FF;
+    box-shadow: none;
+  }
+}
+
+.btn__mark {
+  position: absolute;
+  top: 0;
+  left: 85%;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: #F44336;
+  border-radius: 50%;
+
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  text-align: center;
+  color: #fff;
+}
+
+.btn__active {
+  background-color: #fff;
+  box-shadow: 0px 1px 2px rgba(27, 78, 163, 0.24), 0px 2px 4px rgba(41, 121, 255, 0.24)!important;
+}

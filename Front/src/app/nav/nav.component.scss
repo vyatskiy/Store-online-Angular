@@ -1,0 +1,181 @@
+@import '../../assets/scss/vars';
+
+.nav {
+  padding: 2rem 1.6rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: $nav-height;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #000;
+}
+
+.nav__input {
+  position: relative;
+
+  input {
+    padding: .8rem .8rem .8rem 4.4rem;
+
+    width: 500px;
+    height: 50px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #FFF;
+    color: #42ff29;
+    font-size: 2rem;
+    font-weight: 400;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  span {
+    &:before {
+      content: '';
+
+      margin: auto 0;
+
+      width: 20px;
+      height: 20px;
+
+      display: inline-block;
+
+      position: absolute;
+      left: 1.5rem;
+      top: 0;
+      bottom: 0;
+
+      background: url(../../assets/search.svg) no-repeat center;
+      background-size: 20px;
+    }
+  }
+}
+
+.nav__input-search {
+  padding: 1rem 2rem;
+
+  margin: 0 auto;
+  display: inline-block;
+
+  width: 85%;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6rem;
+
+  background-color: #EDEDF0;
+  box-shadow: 1px 1px 5px rgb(198 203 203 / 50%);
+
+  li {
+    padding: 1rem 1.5rem;
+
+    a {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+
+      color: #000;
+
+      cursor: pointer;
+      transition: color .2s linear;
+      &:hover {
+        color: #42ff29;
+      }
+    }
+  }
+}
+
+.nav__user {
+  position: relative;
+  width: max-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #000;
+
+  button {
+    margin-right: .5rem;
+  }
+
+  &-btn {
+    margin-left: 1.5rem!important;
+
+    position: relative;
+    display: inline-block;
+
+    width: 40px;
+    height: 40px;
+
+    background: none;
+    border: none;
+    border-radius: 50%;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+}
+
+.nav__user-info {
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  position: absolute;
+  top: $nav-height - 30px;
+  right: 0;
+  z-index: 1000;
+
+  width: 150px;
+  height: 130px;
+
+  background-color: rgb(48, 44, 44);
+  border-radius: 1rem;
+
+  span {
+    display: block;
+
+    font-family: "Quicksand", sans-serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #42ff29;
+
+    text-align: center;
+  }
+
+  button {
+    background-color: #fff;
+  }
+}
